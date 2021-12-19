@@ -1,6 +1,6 @@
 // Memory match
 let gameOver=false;
-const cards = document.querySelectorAll(".card");
+let cards = document.querySelectorAll(".card");
 let flips = document.querySelectorAll(".flip");
 let pairs = document.querySelectorAll(".paired");
 let index;
@@ -28,13 +28,12 @@ function restart(){
     cardIndexes=[]
     n=-1
     //make all cards face down
-    pairs.forEach(pair => pair.addEventListener("click", flip));   //return the event listeners to pairs
+    
     flips = document.querySelectorAll(".flip"); //get all flipped and paired cards 
     pairs = document.querySelectorAll(".paired");
+    cards= document.querySelectorAll(".card");
     flips.forEach(flip => flip.classList.remove("flip"));  //remove their flipped and paired attributes
     pairs.forEach(pair => pair.classList.remove("paired"));
-    
-    
     
     setTimeout(function(){ //waiting to shuffle to prevent new faces..
                            //..from being displayed before the cards are flipped
@@ -53,7 +52,9 @@ function restart(){
             cards[i].innerHTML=insertFaces[n];
             cards[i].className=insertClass[n];
         }
-    }, 300);
+        cards.forEach(card => card.addEventListener("click", flip)); //return event listeners
+    }, 250);
+    
 };
 restart();
 
@@ -77,19 +78,11 @@ function flip(){
     if (flips.length==2){
         if (flips[0].classList[1] === flips[1].classList[1]){
             flips.forEach(pair => pair.classList.toggle("paired"));
-            flips.forEach(card => card.removeEventListener("click", flip));
+            flips.forEach(pair => pair.removeEventListener("click", flip));
         }
-    }
-    //checking if game over
-    flips=document.querySelectorAll(".flip");
-    if (document.querySelectorAll(".paired").length == document.querySelectorAll(".card").length){
-        gameOver=true;
     }
 }
 cards.forEach(card => card.addEventListener("click", flip));
-//restart button
-// let restart_button=document.querySelector("button");
-// restart_button.addEventListener("click", restart);
 
 
 
