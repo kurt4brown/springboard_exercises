@@ -60,7 +60,7 @@ function restart(){
             cards[i].className=insertClass[n];
         }
         flips.forEach(flip => flip.classList.remove("flip"));  //remove their flipped and paired attributes
-        cards.forEach(card => card.addEventListener("click", flip)); //return flip event listeners after all is completed
+        cards.forEach(card => card.addEventListener("click", flip)); //replacing or initializing here because given outside allows user to flip cards during shuffle causing bugs
     }, 1010); //setting the duration to longer than the time for a card to flip
     
 };
@@ -89,7 +89,6 @@ function flip(){
         }
     }
 }
-//cards.forEach(card => card.addEventListener("click", flip));
 
 
 
