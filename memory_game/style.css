@@ -36,9 +36,8 @@ header{
     height: 20%;
     float:right;
     position:relative;
-    transition: .2s;
+    transition: 1s;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
     
 }
 .cardBack, .cardFront{
@@ -47,6 +46,7 @@ header{
     position: absolute;
     backface-visibility: hidden;
     background-color: saddlebrown;
+    
 }
 .cardFront{
     transform:rotateY(180deg);
@@ -56,6 +56,7 @@ header{
 .flip{
     transform:rotateY(180deg);
     transform-style: preserve-3d;
+    
 }
 .paired{
     transform:rotateY(180deg);
@@ -76,8 +77,9 @@ p{
 }
 
 /*responsive design*/
+
 /*small devices*/
-/* @media (max-width: 767px){
+@media (max-width: 767px){
     #gamespace{
         width:100%;
         height: 95%;
@@ -92,6 +94,5 @@ p{
         font-size: 7px;
     }
 
-} */
-
+}
 
