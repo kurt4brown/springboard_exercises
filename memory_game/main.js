@@ -89,7 +89,7 @@ function flip(){
         }
     }
 }
-cards.forEach(card => card.addEventListener("click", flip));
+//cards.forEach(card => card.addEventListener("click", flip));
 
 
 
