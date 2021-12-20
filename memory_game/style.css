@@ -38,6 +38,7 @@ header{
     position:relative;
     transition: .2s;
     transform-style: preserve-3d;
+    backface-visibility: hidden;
     
 }
 .cardBack, .cardFront{
