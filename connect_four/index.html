@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header id="heading">
+        Connect Four
+    </header>
+
+    <button id ="restart" onclick="restart();"> <!-- button to restart the game -->
+        <p>Restart</p>
+    </button>
+    
+    <button id ="restart" onclick="undo();"> <!-- button to undo misclicks -->
+        <p>Undo</p>
+    </button>
+
+    <div id="gamespace">  <!-- div to contain a board-->
+        <table id="board">
+        </table>
+    </div>
+    
+    
+
+
+
+    <script src="sc.js"></script>    
+</body>
+</html>
